@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "main-site-variables";
+@import "fonts";
+@import "compass";
+@import "compass/reset";
+@import "mixins";
+// @import "ico-font";
+
+html{
+	min-height: 100%;
+}
+body{
+	min-height:100%;
+	min-height:100vh;
+	font:16px/1.4 "Mer-R", Arial, sans-serif;
+	color:$text-hard-grey;
+	background:url('#{$imgPath}/pattern-purple.png');
+}
+p{
+	font:400 16px/24px "Open Sans", Arial, sans-serif;
+	color:$text-grey;
+}
+main{
+	background:#fff;
+}
+.animate, a {
+    @include transition($transition);
+}
+*, *:after, *:before {
+    @include box-sizing(border-box);
+}
+textarea{
+    resize:vertical;
+    min-height:224px;
+}
+.clear:after,
+.content:after, 
+.contact-box:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.clear.mob{
+    display:none;
+    @include bp( m ){
+		display:block;
+	}
+}
+.mob{
+	display:none;
+	@include bp( m ){
+		display:block;
+	}
+}

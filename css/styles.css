@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Gilroy-R';
+  src: url("../fonts/Gilroy-R.eot");
+  src: local("тШ║"), url("../fonts/Gilroy-R.woff") format("woff"), url("../fonts/Gilroy-R.ttf") format("truetype"), url("../fonts/Gilroy-R.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy-M';
+  src: url("../fonts/Gilroy-M.eot");
+  src: local("тШ║"), url("../fonts/Gilroy-M.woff") format("woff"), url("../fonts/Gilroy-M.ttf") format("truetype"), url("../fonts/Gilroy-M.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy-L';
+  src: url("../fonts/Gilroy-L.eot");
+  src: local("тШ║"), url("../fonts/Gilroy-L.woff") format("woff"), url("../fonts/Gilroy-L.ttf") format("truetype"), url("../fonts/Gilroy-L.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy-EB';
+  src: url("../fonts/Gilroy-EB.eot");
+  src: local("тШ║"), url("../fonts/Gilroy-EB.woff") format("woff"), url("../fonts/Gilroy-EB.ttf") format("truetype"), url("../fonts/Gilroy-EB.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-height: 100vh;
+  font: 16px/1.4 "Mer-R", Arial, sans-serif;
+  color: #545462;
+  background: url("../images/pattern-purple.png");
+}
+
+p {
+  font: 400 16px/24px "Open Sans", Arial, sans-serif;
+  color: #4a4a4a;
+}
+
+main {
+  background: #fff;
+}
+
+.animate, a {
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 224px;
+}
+
+.clear:after,
+.content:after,
+.contact-box:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.clear.mob {
+  display: none;
+}
+@media screen and (max-width: 678px) {
+  .clear.mob {
+    display: block;
+  }
+}
+
+.mob {
+  display: none;
+}
+@media screen and (max-width: 678px) {
+  .mob {
+    display: block;
+  }
+}
