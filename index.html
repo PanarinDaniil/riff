@@ -361,15 +361,31 @@
 							</div>
 							<div class="ac-t2 ac-toggle">What is UPT?</div>
 							<div class="ac-c2 ac-content">
-								<p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
+								<p>UPT stands for Universal Personal Telecommunication.</p>
+								<p>The UPT standards have been developed to allow a UPT number to be associated with any device on any network, anywhere in the world. An individual should be able to enter an access code to make or receive calls on any device.</p>
+								<p>This is particularly useful for the bottom of the pyramid consumer for whom the cost of a device can present a major barrier to service. UPT allows ad hoc sharing of physical devices.</p>
+								<p>UPT is intended to be independent of geography or network provider.</p>
+								<p>878TEN is the world’s only UPT range and 878TEN numbers are the only E.164 numbers that can be owned by individuals (rather than governments).</p>
 							</div>
 							<div class="ac-t2 ac-toggle">How doe ENUM work?</div>
 							<div class="ac-c2 ac-content">
-								<p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
+								<p>ENUM lets 878TEN numbers access Internet resources by mapping them into Universal Resource Identifiers (URIs).</p>
+								<p>ENUM uses NAPTR (Name Authority Pointer) records to effect mappings from E.164 telephone numbers to Uniform Resource Identifiers (URIs).</p>
+								<p>The Internet Assigned Number Authority (IANA) maintains a list of standardised URIs which currently comprises approximately 250 definitions.</p>
+								<p>Examples of how existing URI mappings allow 878TEN numbers to be used as universal personal identifiers include:</p>
+								<p class="center">E.164 to http and E.164 to https: for web pages;<br/>
+								E.164 to mailto for email addresses; and<br/>
+								E.164 to SIP for SIP VoIP accounts.</p>
+								<p>The ENUM protocol requires that an 878TEN number is transformed into a domain name by reversing the number, separating each digit with a dot and appending .e164.arpa.</p>
+								<p>For example, the number (+)87810 1234567890 would transform into the domain name 0.9.8.7.6.5.4.3.2.1.0.1.8.7.8.e164.arpa. This is performed by a small piece of code, called the ENUM Client, which can easily be integrated into any system that intends to use the 878TEN identifier.</p>
+								<p>This domain name is then used to look up the NAPTR records associated with the number in an ENUM Domain Name Server (E-DNS). The E-DNS passes the NAPTR records to the ENUM Client which shares them with the application that initiated the request. The application can then use the mapping information in the NAPTR records as required to complete the request.</p>
+								<p>Dual-horizon E-DNS architectures, encryption, blockchain, registration, service provider authorization and so on can be used to mitigate against the personal information associated with the 878TEN identifier being misused, abused or hacked.</p>
 							</div>
 							<div class="ac-t2 ac-toggle">Can I use an 878TEN number even if my telco does not recognise 878TEN?</div>
 							<div class="ac-c2 ac-content">
-								<p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
+								<p>Arrangements are not yet in place with telecom operators to route 878TEN numbers on their networks, but, it is already possible to use 878TEN numbers to make and receive calls over the Internet (VoIP).</p>
+								<p>PBX equipment is generally ENUM enabled, so enterprise telephone systems can be configured to recognise and route the 878TEN numbers via the Internet.</p>
+								<p>Also, smartphone clients can be ENUM enabled so that calls to 878TEN numbers are made over the Internet. 878TEN is currently testing smartphone applications and will provide links shortly.</p>
 							</div>
 						</div>
 					</div>

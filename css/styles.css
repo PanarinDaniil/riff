@@ -1009,6 +1009,13 @@ canvas {
 .polygon-yellow .accordion-wrap .ac-toggle:hover:before, .polygon-yellow .accordion-wrap .ac-toggle.active:before {
   color: #3e3e3f;
 }
+.polygon-yellow .accordion-wrap .ac-content {
+  padding: 31px 0 38px;
+}
+.polygon-yellow .accordion-wrap .ac-content p {
+  padding: 0;
+  margin-bottom: 20px;
+}
 
 .block-revealer__element {
   position: absolute;
