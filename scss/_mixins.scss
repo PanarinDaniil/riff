@@ -1,19 +1,19 @@
 @mixin bp( $point ) {
-  @if $point == xl {
-    @media screen and (min-width: 801px) { @content; }
-  }
-  @else if $point == l {
-    @media screen and (max-width: 800px) { @content; }
-  }
-  @else if $point == xm {
-    @media screen and (min-width: 679px) { @content; }
+  @if $point == l {
+    @media screen and (max-width:991px) { @content; }
   }
   @else if $point == m {
-    @media screen and (max-width: 678px) { @content; }
+    @media screen and (max-width:767px) { @content; }
+  }
+  @else if $point == minM {
+    @media screen and (min-width:768px) { @content; }
+  }
+  @else if $point == s {
+    @media screen and (max-width:576px) { @content; }
   }
 }
-@mixin code-buddy (){
-	font-family:'code-buddy' !important;
+@mixin icoFont(){
+	font-family:'787' !important;
 	speak:none;
 	font-style:normal;
 	font-weight:normal;
@@ -23,7 +23,7 @@
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 }
-@mixin flex (){
+@mixin flex(){
   display:-webkit-box;
   display:-moz-box;
   display:-ms-flexbox;
