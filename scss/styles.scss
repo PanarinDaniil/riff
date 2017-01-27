@@ -13,18 +13,21 @@ body{
 	min-height:100%;
 	min-height:100vh;
 	font:17px/1.71 "Gilroy-M", Arial, sans-serif;
-	color:#3e3e3f;
-	// background:url('#{$imgPath}/pattern-purple.png');
+	color:$dark-grey;
 }
 p{
 	font:17px/1.71 "Gilroy-M", Arial, sans-serif;
-	color:#3e3e3f;
+	color:$dark-grey;
 }
 .animate, a {
     @include transition($transition);
 }
 a{
 	text-decoration:none;
+	outline:none;
+	&:focus, &:hover, &:active{
+		outline:none;
+	}
 }
 *, *:after, *:before {
     @include box-sizing(border-box);
@@ -37,8 +40,8 @@ a{
     clear: both;
 }
 h1, .h1{
-	font:72px/1.4 "Gilroy-EB";
-	color:#d81720;
+	font:64px/1.34 "Gilroy-EB";
+	color:$main-red;
 	@include bp( l ) {
 	    font-size:52px;
 	}
@@ -48,7 +51,7 @@ h1, .h1{
 }
 h2, .h2{
 	font:72px/1.2 "Gilroy-EB";
-	color:#d81720;
+	color:$main-red;
 	@include bp( l ) {
 	    font-size:52px;
 	}
@@ -95,12 +98,12 @@ h2, .h2{
 	@include transition($transitionL);
 	@include bp( m ){
 		z-index:12;
-		background:#3e3e3f;
+		background:$dark-grey;
 		padding:25px 0;
 	}
 	&.fixed-theme{
 		position:fixed;
-		background:#3e3e3f;
+		background:$dark-grey;
 		padding:15px 0;
 		.logo{
 		    height:69px;
@@ -134,10 +137,10 @@ h2, .h2{
 	}
     &:hover{
         div{
-        	background:#ffdb00;
+        	background:$main-yellow;
         	&:before,
 	        &:after{
-	        	background:#ffdb00;
+	        	background:$main-yellow;
 	        }
         }
     }
@@ -162,7 +165,7 @@ h2, .h2{
         text-indent:-9999px;
         height:5px;
         display:block;
-        background:#ffdb00;
+        background:$main-yellow;
         position:relative;
         @include transition(background 0.3s 0s);
         &:before,
@@ -173,7 +176,7 @@ h2, .h2{
             right:0;
             height:5px;
             z-index:1;
-            background:#ffdb00;
+            background:$main-yellow;
             @include transition-delay(.3s, 0s, 0s);
             @include transition-duration(.3s, .3s, .3s);
         }
@@ -202,6 +205,7 @@ h2, .h2{
 }
 .logo{
 	height:126px;
+	@include transition($transitionL);
 	@include bp( m ){
 		height:69px;
 	}
@@ -217,6 +221,7 @@ h2, .h2{
 		max-width:100%;
 		display:block;
 		height:126px;
+		@include transition($transitionL);
 		@include bp( m ){
 			height:69px;
 		}
@@ -257,30 +262,30 @@ h2, .h2{
 		}
 		&.active{
 			a{
-				color:#d81720;
+				color:$main-red;
 			}
 		}
 	}
 	a{
 		font:18px/1 "Gilroy-EB";
-		color:#b2b2b2;
+		color:$header-nav;
 		@include bp( m ){
 			display:block;
 			padding:15px 0;
 		}
 		&:focus{
-			color:#b2b2b2;
+			color:$header-nav;
 			text-decoration:none;	
 		}
 		&:hover{
 			text-decoration:none;
-			color:#d81720;
+			color:$main-red;
 		}
 	}
 }
 .top-back{
 	.content{
-		padding:303px 0 475px;
+		padding:285px 0 475px;
 		position:relative;
 		z-index:3;
 		@include bp(m){
@@ -288,11 +293,14 @@ h2, .h2{
 		}
 	}
 	.h1, h1{
-		margin-bottom:31px;
-		color:#fff;
+		margin-bottom:26px;
+		color:$white;
 		span{
 			font-size:60px;
 			display:block;
+			&.sm{
+				display:inline;
+			}
 			@include bp(m){
 				font-size:40px;
 				line-height:1.4;
@@ -301,7 +309,7 @@ h2, .h2{
 	}
 	p{
 		font:24px/1.21 "Gilroy-R";
-		color:#fff;
+		color:$white;
 		max-width:906px;
 	}
 }
@@ -324,25 +332,24 @@ canvas {
 	right:0;
 	width:100%;
 	height:100%;
-	background-color:#787878;
+	background-color:$grey;
 	background-image:url("");
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:50% 50%;
 }
 .polygon-grey{
-	background-color:#787878;
+	background-color:$grey;
 }
 .polygon-yellow{
-	background-color:#ffdb00;
+	background-color:$main-yellow;
 }
-
 /*End particles*/
 .white{
-	background:#fff;
+	background:$white;
 }
 .grey{
-	background:#f9f9f9;
+	background:$light-grey;
 }
 .fl-end{
 	@include align-self(flex-end);
@@ -351,7 +358,7 @@ canvas {
 	@include border-radius(10px);
 }
 .usp{
-	padding-bottom:170px;
+	padding-bottom:172px;
 	@include bp(m){
 		padding-bottom:40px;
 	}
@@ -372,6 +379,11 @@ canvas {
 				margin-top:0px;
 				background:transparent;
 			}
+			.text-box{
+				p{
+					margin-bottom:44px;
+				}
+			}
 		}
 	}
 	.visible{
@@ -387,20 +399,27 @@ canvas {
 		p{
 			margin-bottom:26px;
 		}
-	}	
+	}
+	.box_2{
+		.text-box{
+			p{
+				line-height:1.71;
+			}
+		}
+	}
 }
 .add-links{
 	.h2, h2{
-		color:#d81720;
+		color:$main-red;
 		a{
-			color:#d81720;
+			color:$main-red;
 			&:focus{
-				color:#d81720;
+				color:$main-red;
 				text-decoration:none;
 			}
 			&:hover,
 			&.active{
-				color:#3e3e3f;
+				color:$dark-grey;
 				text-decoration:none;
 			}
 		}
@@ -413,20 +432,20 @@ canvas {
 	.title{
 		margin-bottom:22px;
 		font:24px/1.4 "Gilroy-EB";
-		color:#3e3e3f;
+		color:$dark-grey;
 	}
 	p{
 		line-height:1.47;
-		color:#787878;
+		color:$grey;
 		margin-bottom:35px;
 	}
 	.link{
 		font:18px/1 "Gilroy-EB";
-		color:#ffcf06;
+		color:$main-yellow;
 		i{
 		    display:inline-block;
 		    vertical-align:top;
-		    margin:5px 0 0 3px;
+		    margin:5px 0 0 1px;
 			@include transition($transition);
 		}
 		&:hover{
@@ -440,31 +459,34 @@ canvas {
 .polygon-yellow{
 	.text-box{
 		p{
-			color:#3e3e3f;
-			// margin-bottom:35px;
+			color:$dark-grey;
 		}
 		.link{
-			color:#3e3e3f;
+			color:$dark-grey;
 		}
 	}
 	.blank-sheet{
 		.number{
-			color:#ffdb00;
+			color:$main-yellow;
 			bottom:-10px;
 			left:-40px;
+			@include bp(m){
+			    bottom:-7px;
+			    left:-20px;
+			}
 		}
 	}
 }
 .box_1{
-	padding:85px 0 150px;
+	padding:80px 0 150px;
 	@include bp( m ) {
 		padding-bottom:40px;
 	}
 	.sm-nav{
 	    position:absolute;
 	    top:-60px;
-	    right:60px;
-	    color:#ffcf06;
+	    right:169px;
+	    color:$main-yellow;
 	    font-size:16px;
 	    line-height:1;
 	    @include transform(rotate(-90deg));
@@ -474,12 +496,17 @@ canvas {
 	    &:after{
     	    position:absolute;
 		    content:"";
-		    left:-58px;
+		    left:-90px;
 		    top:7px;
-		    width:47px;
+		    width:72px;
 		    height:1px;
-		    background:#ffcf06;
+		    background:$main-yellow;
 	    }
+	}
+	.text-box{
+		.title{
+			margin-bottom:24px;
+		}
 	}
 }
 .blank-sheet{
@@ -487,6 +514,11 @@ canvas {
 	top:0;
 	bottom:0;
 	width:71%;
+	@include bp(s){
+		left:0!important;
+		rightt:0!important;
+		width:100%!important;	
+	}
 	&.right-block{
 		right:0;
 	}
@@ -501,10 +533,11 @@ canvas {
 		position:absolute;
 		bottom:90px;
 		right:-5px;
-		color:#ffcf06;
+		color:$main-yellow;
 		font-size:16px;
 		line-height:1;
 		@include transform(rotate(-90deg));
+		z-index:2;
 		&:after{
 			position:absolute;
 			content:"";
@@ -512,7 +545,7 @@ canvas {
 			top:7px;
 			width:47px;
 			height:1px;
-			background:#ffcf06;
+			background:$main-yellow;
 		}
 	}
 	.number{
@@ -520,41 +553,53 @@ canvas {
 		bottom:-10px;
 		left:-20px;
 		font:300px/0.7 "Gilroy-EB";
-		color:#f9f9f9;
+		color:$light-grey;
+		z-index:1;
+		@include bp(m){
+			font-size:150px;
+		}
 	}
 }
 .box_2{
 	.text-box{
-		padding-top:107px;
-		padding-bottom:81px;
+		padding-top:100px;
+		padding-bottom:57px;
 	}
 	.h2, h2{
 		margin-top:70px;
 	}
+	.blank-sheet{
+		right:15px;
+		width:67%;
+		.sm-nav{
+			right:-31px;
+		}
+	}
 }
 .black-block{
-	background:#3e3e3f;
-	padding:110px 0;
+	background:$dark-grey;
+	padding:104px 0 88px;
 	.h2, h2{
-		color:#f9f9f9;
+		color:$light-grey;
 		line-height:1;
 	}
 	.round-list{
 		padding-left:40px;
+		margin-top:6px;
 		li{
 			position:relative;
 			line-height:1;
-			color:#f9f9f9;
-			margin-bottom:25px;
+			color:$light-grey;
+			margin-bottom:24px;
 			&:before{
 				position: absolute;
 				content:"";
 				top:0;
-				left:-42px;
+				left:-39px;
 				width:19px;
 				height:19px;
 				@include border-radius(50%);
-				background:#787878;
+				background:$grey;
 			}
 		}
 	}
@@ -572,8 +617,28 @@ canvas {
 		width:62%;
 	}
 	.text-box{
-		margin-top:68px;
+		margin-top:60px;
+		p{
+		    line-height:1.73;
+		}
 	}
+}
+.box_3{
+	.h2, h2{
+		margin:89px 0 164px;
+		span{
+			font-size:46px;
+		}
+	}
+	.blank-sheet{
+	    left:15px;
+        width:59%;
+        @include bp(s) {
+        	left:0;
+		    width:99%;
+        }
+	}
+
 }
 .box_4, .box_6, .box_7{
 	padding:115px 0 137px;
@@ -595,40 +660,110 @@ canvas {
 		}
 	}
 }
-.box_5{
+.box_4{
+	.text-box{
+		margin-top:62px;
+		p{
+			line-height:1.7;
+			margin-bottom:38px;
+		}
+	}
 	.blank-sheet{
-		width:70%;
+		right:14px;
+		width:67%;
+		.sm-nav{
+			bottom:58px;
+			right:17px;
+			&:after{
+				left:-71px;
+			}
+		}
+	}
+	.h2, h2{
+		margin:79px 0 260px;
+		text-align:right;
+	}
+}
+.box_5{
+    padding:96px 0 102px;
+	.blank-sheet{
+		left:15px;
+		width:67%;
+		.sm-nav{
+			right:15px;
+			&:after{
+				left:-71px;
+			}
+		}
+	}
+	.h2, h2{
+	    margin:79px 0 260px;
+	    span{
+    	    font-size:46px;
+	    }
+	}
+	.text-box{
+	    margin-top:60px;
+	    p{
+    	    line-height:1.73;
+    	    margin-bottom:29px;
+	    }
+	}
+}
+.box_6{
+	padding:96px 0 137px;
+	.text-box{
+		margin-top:61px;
+	}
+	.blank-sheet{
+	    right:15px;
+	    width:68%;
+	    .sm-nav{
+	    	bottom:50px;
+		    right:17px;
+	    }
+	}
+	.h2, h2{
+	    margin:80px 0 259px;
+	    text-align:right;
 	}
 }
 .ladder{
-	padding:130px 0 105px;
+	padding:123px 0 65px;
 	.content{
 		position:relative;
 	    z-index:3;
 	}
 	.h2, h2{
-		color:#fff;
-		margin-bottom:40px;
+		color:$white;
+	    margin-bottom:29px;
 	}
 	p{
-		color:#fff;
+		color:$white;
 		line-height:2.12;
-		margin-bottom:45px;
+	    margin-bottom:41px;
+	    letter-spacing:-1px;
 	}
 }
 .box_7{
+	padding:44px 0 46px;
+	.text-box{
+		margin-top:192px;
+		p{
+			line-height:1.73;
+		    margin-bottom:29px;
+		}
+	}
 	.blank-sheet{
+		left:0px;
+	    width:77%;
 		content:"";
+	}
+	.h2, h2{
+	    margin:164px 0 176px;
 	}
 }
 .box_7, .box_10{
-	padding-bottom:46px;
-	.h2, h2{
-		margin:180px 0;
-	}
-	.text-box{
-		margin-top:210px;
-	}
 	.order{
 		@include bp(m){
 			margin-top:50px;
@@ -640,36 +775,82 @@ canvas {
 	padding-bottom:53px;
 	.text-box{
 		margin-top:25px;
+		p{
+			line-height:1.73;
+		    margin-bottom:34px;
+		}
 	}
 	.h2, h2{
-		margin:210px 0;
+	    margin:210px 0 215px;
 	}
 	.blank-sheet{
 		content:"";
+		left:14px;
+	    width:78%;
+	}
+	.accordion-wrap{
+		.ac-toggle{
+			margin-bottom:8px;
+		}
+		.ac-content{
+			p{
+				padding:27px 0 34px;
+			}
+		}
 	}
 }
 .box_9{
-	padding:95px 0 50px;
+    padding:88px 0 58px;
 	.content{
 	    position:relative;
 	    z-index:3;
 	}
 	.h2, h2{
-		margin-bottom:35px;
+	    margin-bottom:28px;
+	}
+	.accordion-wrap{
+		.ac-toggle{
+		    margin-bottom:10px;
+		}
+		.ac-content{
+	        padding:33px 0 23px;
+		    letter-spacing:0.1px;
+		    p{
+				padding:0;
+			    margin-bottom:20px;
+			    line-height:2.12;
+			}
+		}
 	}
 }
 .box_10{
 	padding:153px 0 86px;
+	.h2, h2{
+	    margin:166px 0 174px;
+	}
+	.text-box{
+	    margin-top:127px;
+	    p{
+	    	line-height:1.73;
+		    margin-bottom:29px;
+	    }
+	}
 	.blank-sheet{
 		&.left-block{
+		    left:11px;
+		    width:69%;
 			.sm-nav{
 				bottom:55px;
+				right:3px;
+				&:after{
+				    left:-64px;
+				}
 			}
 		}
 	}
 }
 .box_11{
-	padding:60px 0 48px;
+	padding:57px 0 43px;
 	.partners{
 		text-align:center;
 		letter-spacing:-4px;
@@ -716,21 +897,33 @@ canvas {
 		}
 	}
 }
+.box_2,.box_3,.box_4,.box_5,
+.box_6,.box_7,.box_8,.box_10{
+	.h2, h2{
+		@include bp(m){
+		    margin: 65px 0 130px!important;
+		}
+	}
+}
 .footer{
-	padding:150px 0 35px;
+    padding:142px 0 30px;
 	.content{
 		position:relative;
 	    z-index:3;
 	}
 	h2, .h2{
-		color:#fff;
-		margin-bottom:80px;
+		color:$white;
+		margin-bottom:62px;
 	}
 	.footer-text{
-		margin-bottom:90px;
+		margin-bottom:86px;
+		@include bp(s){
+			margin-bottom:40px;
+		}
 		p{
 			margin:0;
-			color:#fff;
+			color:$white;
+			font-size:22px;
 		}
 	}
 	.footer-adr{
@@ -747,16 +940,32 @@ canvas {
 	}
 	.f-info, .f-info p, .title{
 		margin-bottom:45px;
-		color:#fff;
+		color:$white;
 	}
 	.title{
 		font:24px/1.5 "Gilroy-EB";
 		min-height:72px;
+		margin-bottom:36px;
+		@include bp(s){
+			margin-bottom:20px;
+		}
 	}
 	.f-info{
-		font-size:24px;
-		line-height:1.5;
-		min-height:87px;
+		min-height:103px;
+		@include bp(s){
+			min-height:auto;
+		}
+		p{
+			font-size:24px;
+			line-height:1.5;
+			margin-bottom:0;
+			@include bp(s){
+				font-size:19px;
+			}		
+		}
+	}
+	.margin{
+	    margin-bottom:4px;
 	}
 }
 .polygon-yellow{
@@ -768,19 +977,12 @@ canvas {
 				font-size:20px;
 			}
 			&:hover, &.active{
-				color:#3e3e3f;
+				color:$dark-grey;
 				&:before{
-					color:#3e3e3f;
+					color:$dark-grey;
 				}
 			}
 		}
-		.ac-content{
-		    padding: 31px 0 38px;
-			p{
-				padding:0;
-			    margin-bottom:20px;
-			}
-		}	
 	}
 }
 //  Block-reveal 
@@ -790,13 +992,13 @@ canvas {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #000;
+	background:#000;
 	pointer-events: none;
 	opacity: 0;
 }
 .accordion-wrap{
 	.ac-toggle{
-		color:#3e3e3f;
+		color:$dark-grey;
 		cursor:pointer;
 		margin-bottom:8px;
 		padding-left:15px;
@@ -808,15 +1010,15 @@ canvas {
 			content:"#{$icon-plus}";
 			left:0;
 			top:2px;
-			color:#3e3e3f;
+			color:$dark-grey;
 			@include icoFont();
 		    font-size:14px;
-			@include transition($transitionM);			
+			@include transition($transitionM);
 		}
 		&:hover, &.active{
-			color:#d81720;
+			color:$main-red;
 			&:before{
-				color:#d81720;
+				color:$main-red;
 			}
 		}
 		&.active{
@@ -831,6 +1033,38 @@ canvas {
 			padding:31px 0 38px;
 			margin:0;
 		}
+	}
+}
+.mob-fixed{
+	display:none;
+	position:fixed;
+	bottom:8px;
+	right:8px;
+	z-index:8;
+	@include transform(rotate(-90deg));
+	@include transition($transitionM);
+	@include bp( m ){
+		display:block;
+	}
+}
+#back-to-top{
+	display:block;
+    text-decoration:none;
+    text-align:center;
+	font-size:30px;
+	color:$main-red;
+	opacity:0;
+	line-height:40px;
+	height:40px;
+	width:40px;
+	background:$dark-grey;
+	@include border-radius(50%);
+	@include transition($transitionM);
+	&.show{
+		opacity:1;
+	}
+	i{
+	    line-height:42px;
 	}
 }
 /*POPUPs*/
@@ -877,7 +1111,7 @@ canvas {
 		height:100%;
 		position:relative;
 		p{
-			color:#3e3e3f;
+			color:$dark-grey;
 			line-height:2.12;
 		}
 	}
